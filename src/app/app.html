@@ -1,5 +1,14 @@
 <app-header />
 <main>
- <app-user [id]="Users[0].id" [name]="Users[0].name"  (select)="onSelectEvent($event)"/>
- <app-task [name]="selectedUser!.name"/>
+    <ul id="user">
+    @for (user of Users; track user.id) {
+   <li><app-user [user]="user" (select)="onSelectEvent($event)"/></li>
+    }
+   
+    </ul>
+    @if (selectedUser) {
+   <app-task  [name]="selectedUser.name" [userId]="selectedUser.id"/>
+    }@else {
+        <p>Select id is not exist</p>
+    }
 </main>

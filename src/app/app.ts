@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { Header } from './header/header';
 import { User } from './user/user';
 import { DUMMY_USERS } from './user/dummy.user';
